@@ -1,12 +1,14 @@
-# [Your Game Title] API
+# Board Wars API
 
-Backend API for **[Your Game Title]**, a tournament game for the SorSU Bulan Campus library.
+Backend API for **Board Wars**, a multiplayer quiz strategy game with hidden teams and board movement.
 CS 313 Software Engineering 1, A.Y. 2026-2027.
 
-- Developer: [Your full name] ([your GitHub username]), BSCS [3-1 or 3-2]
-- Group and game concept: [Group name]
+- Developer: Jayward Godalle (JaywardGodalle), BSCS 3-2
+- Group and game concept: Team 11
 
 This is my own build of my group's game concept. Every commit in this repository was made by me, with Git, on my own computer or in my own Codespace.
+
+Game concept: Players on hidden teams answer simultaneous questions. A correct answer grants one movement opportunity on a 15 x 15 board, moving to one of eight adjacent tiles. A player is finished when reaching the opposing edge, and the first team with all 15 players finished wins.
 
 ## Tech stack
 
@@ -60,11 +62,15 @@ Base URL: `http://localhost:3001/api/v1`
 
 ## What "completed" means in my game
 
-[One or two sentences: when does a player count as having completed a game? For example: "A player completed the game when they answered every question, even if some answers were wrong or timed out."]
+A player is finished when they reach the opposing edge of the 15 x 15 board. The game ends when the first team has all 15 players finished.
+
+## Schema note
+
+The PDF's logical tables are hosts, question_sets, questions, choices, sessions, session_players, and answers. Week 10 Design Change Notice 01 requires reconciling hosts with a users table that has a role and enforcing the one-seat rule during the migration step. Migrations and seed data are not yet complete; do not claim them as finished.
 
 ## Tables
 
-[List your tables, one line each, in the order of your migrations.]
+Migration tables will be listed here once migrations are written.
 
 ## Database scripts
 
@@ -72,7 +78,9 @@ Base URL: `http://localhost:3001/api/v1`
 |---|---|
 | npm run db:migrate | Runs migrations that have not run yet |
 | npm run db:migrate:status | Lists every migration as up or down |
+| npm run db:migrate:undo | Undoes the last migration |
 | npm run db:seed | Loads the seed data |
+| npm run db:seed:undo | Undoes all seed data |
 | npm run db:check | Counts the rows in every table |
 | npm run db:reset | Empties the database, rebuilds every table and reloads the seed data |
 | npm run check | Runs the same automatic check that GitHub runs after every push |

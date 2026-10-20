@@ -1,7 +1,7 @@
 {
-  "name": "your-game-api",
+  "name": "board-wars-api",
   "version": "1.0.0",
-  "description": "CHANGE_ME - one sentence about your game (CS 313 Software Engineering 1)",
+  "description": "Backend API for Board Wars, a multiplayer quiz strategy game with hidden teams and board movement.",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -19,7 +19,7 @@
   "engines": {
     "node": ">=22"
   },
-  "author": "CHANGE_ME - your full name",
+  "author": "Jayward Godalle",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^18.0.7",
